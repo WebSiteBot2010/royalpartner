@@ -29,6 +29,7 @@ const adminLoginForm = document.getElementById('admin-login-form');
 const adminLogoutButton = document.getElementById('admin-logout');
 const adminInfo = document.getElementById('admin-info');
 const adminActions = document.getElementById('admin-actions');
+const adminLoggedIn = document.getElementById('admin-logged-in');
 const adminData = document.getElementById('admin-data');
 
 function showToast(message) {
@@ -220,15 +221,13 @@ function renderAdminPage() {
   const auth = state.auth;
   if (!auth) {
     adminLoginForm.classList.remove('hidden');
-    adminInfo.classList.add('hidden');
-    adminActions.classList.add('hidden');
+    adminLoggedIn.classList.add('hidden');
     adminData.innerHTML = '<p>Effettua il login con una delle 4 email di supporto nel pannello admin.</p>';
     return;
   }
 
   adminLoginForm.classList.add('hidden');
-  adminInfo.classList.remove('hidden');
-  adminActions.classList.remove('hidden');
+  adminLoggedIn.classList.remove('hidden');
   adminInfo.querySelector('#admin-role').textContent = auth.role;
   adminInfo.querySelector('#admin-email').textContent = auth.email;
   adminInfo.querySelector('#admin-display').textContent = auth.displayName;

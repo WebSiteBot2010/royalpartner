@@ -176,6 +176,10 @@
         <div class="section-title">
           <h2>Annunci</h2>
         </div>
+        <p class="section-description">
+          Qui vengono caricati gli annunci reali dal backend. Ogni annuncio pubblicato nell'admin panel
+          viene mostrato immediatamente qui per tutti gli utenti.
+        </p>
         <div id="annunci-list" class="cards-grid"></div>
       </section>
 
@@ -183,6 +187,10 @@
         <div class="section-title">
           <h2>Comunicazioni ufficiali</h2>
         </div>
+        <p class="section-description">
+          Le comunicazioni ufficiali vengono aggiornate dal team di moderazione e appaiono qui in tempo reale.
+          I contenuti sono salvati sul backend e distribuiti a tutti i visitatori del sito.
+        </p>
         <div id="comunicazioni-list" class="cards-grid"></div>
       </section>
 
@@ -191,8 +199,8 @@
           <h2>Admin Panel</h2>
         </div>
         <p class="section-description">
-          Accedi con una delle 4 email del supporto per gestire le richieste e i contenuti. Ogni ruolo ha
-          un dashboard dedicato.
+          Questa è la pagina amministrativa completa. Effettua il login per vedere i dati reali delle richieste partner,
+          le candidature collaboratore, gli annunci pubblicati, le comunicazioni ufficiali e i log di accettazione.
         </p>
         <div id="admin-content" class="panel">
           <form id="admin-login-form" class="panel-card form-grid">
@@ -201,17 +209,20 @@
             <button type="submit" class="button">Accedi</button>
             <small>Usa gestore@support, admin@support, moderazione@support o partner@support con le password abbinate.</small>
           </form>
-          <div id="admin-info" class="panel-card hidden">
-            <h3>Accesso admin</h3>
-            <p><strong>Utente:</strong> <span id="admin-display"></span></p>
-            <p><strong>Email:</strong> <span id="admin-email"></span></p>
-            <p><strong>Ruolo:</strong> <span id="admin-role"></span></p>
-            <button id="admin-logout" class="secondary-button">Logout</button>
+          <div id="admin-logged-in" class="hidden">
+            <div id="admin-info" class="panel-card">
+              <h3>Accesso admin</h3>
+              <p><strong>Utente:</strong> <span id="admin-display"></span></p>
+              <p><strong>Email:</strong> <span id="admin-email"></span></p>
+              <p><strong>Ruolo:</strong> <span id="admin-role"></span></p>
+              <button id="admin-logout" class="secondary-button">Logout</button>
+            </div>
+            <div id="admin-actions" class="panel-card">
+              <p>Questa dashboard mostra i dati reali salvati sul backend. Puoi accettare richieste, pubblicare annunci e comunicazioni,
+              e verificare i log dei partner accettati.</p>
+            </div>
+            <div id="admin-data"></div>
           </div>
-          <div id="admin-actions" class="panel-card hidden">
-            <p>Utilizza le funzioni di gestione per accettare richieste, pubblicare annunci e comunicazioni.</p>
-          </div>
-          <div id="admin-data"></div>
         </div>
       </section>
     </main>
