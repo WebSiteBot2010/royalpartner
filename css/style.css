@@ -45,7 +45,7 @@ select {
 }
 
 .section {
-  display: none;
+  display: block;
   padding: 4rem 0;
 }
 
@@ -477,6 +477,43 @@ select {
   padding: 2rem 0 4rem;
   color: #8c98b3;
   text-align: center;
+}
+
+.login-panel {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 30px;
+  background: rgba(10, 16, 32, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
+}
+
+.login-panel h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+.login-panel p {
+  color: #b9c4dd;
+  line-height: 1.8;
+}
+
+.login-info {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.login-info strong {
+  color: #f5f9ff;
+}
+
+.login-message {
+  margin: 1rem 0 0;
+  color: #f8f9fc;
 }
 
 @media (max-width: 900px) {

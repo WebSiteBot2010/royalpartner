@@ -7,7 +7,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="login-page">
     <header class="header">
       <div class="container header-inner">
         <div class="brand"><span>Royal</span>Partner</div>
@@ -25,36 +25,34 @@
     </header>
     <main class="container">
       <section class="section">
-        <div class="section-title"><h2>Admin Panel</h2></div>
+        <div class="section-title"><h2>Login Admin</h2></div>
         <p class="section-description">
-          Usa il pannello admin per accedere alle pagine riservate dei ruoli supportati. Ogni sezione è separata
-          e collegata a una pagina dedicata per gestire richieste, annunci e comunicazioni.
+          Accedi con le stesse credenziali previste dal sistema: gestore, admin, moderazione o partner.
+          Dopo il login verrai reindirizzato al pannello riservato al tuo ruolo.
         </p>
       </section>
       <section class="section">
-        <div class="panel-grid">
-          <div class="panel-card">
-            <h3>Dashboard gestore</h3>
-            <p>Gestione completa di richieste partner, candidature collaboratore, annunci e comunicazioni.</p>
-            <a class="button" href="adminpanelgestore.html">Apri Gestore</a>
+        <div class="login-panel">
+          <h2>Accedi al pannello</h2>
+          <p>Inserisci l'email e la password per continuare. Le credenziali valide sono quelle già usate dal backend.</p>
+          <form id="admin-login-form" class="form-grid">
+            <input name="email" class="input-field" type="email" placeholder="Email" required />
+            <input name="password" class="input-field" type="password" placeholder="Password" required />
+            <button type="submit" class="button">Login</button>
+          </form>
+          <div class="login-info">
+            <p><strong>Credenziali supportate:</strong></p>
+            <ul>
+              <li><strong>gestore@support</strong> / gestore123</li>
+              <li><strong>admin@support</strong> / admin123</li>
+              <li><strong>moderazione@support</strong> / moderazione123</li>
+              <li><strong>partner@support</strong> / partner123</li>
+            </ul>
           </div>
-          <div class="panel-card">
-            <h3>Dashboard admin</h3>
-            <p>Accesso al pannello admin per il ruolo admin con funzioni specifiche.</p>
-            <a class="button" href="adminpaneladmin.html">Apri Admin</a>
-          </div>
-          <div class="panel-card">
-            <h3>Dashboard moderazione</h3>
-            <p>Area dedicata alla gestione annunci e comunicazioni ufficiali.</p>
-            <a class="button" href="adminpanelmoderazione.html">Apri Moderazione</a>
-          </div>
-          <div class="panel-card">
-            <h3>Dashboard partner</h3>
-            <p>Accesso riservato al ruolo partner per visualizzare log e accettare richieste.</p>
-            <a class="button" href="adminpanelpartner.html">Apri Partner</a>
-          </div>
+          <p class="login-message">Verrai reindirizzato automaticamente alla dashboard del tuo ruolo dopo l'accesso.</p>
         </div>
       </section>
     </main>
+    <script src="js/admin-login.js"></script>
   </body>
 </html>
