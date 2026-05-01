@@ -13,10 +13,13 @@
         <div class="brand"><span>Royal</span>Partner</div>
         <nav class="nav-links">
           <a href="index.html">Home</a>
-          <a href="requestpartner.html">Richiesta Partner</a>
-          <a href="requestcollab.html">Richiesta Collaboratore</a>
+          <a href="chi-siamo.html">Chi Siamo</a>
+          <a href="servizi-offerti.html">Servizi Offerti</a>
+          <a href="requestpartner.html">Diventa Partner</a>
+          <a href="requestcollab.html">Diventa Collaboratore</a>
           <a href="annunci.html">Annunci</a>
           <a href="comunicazioni.html">Comunicazioni</a>
+          <a href="admin.html">Admin Panel</a>
         </nav>
       </div>
     </header>
@@ -45,7 +48,6 @@
         <h3>Invia richiesta Partner</h3>
         <form id="partner-request-form" class="form-grid">
           <input name="name" class="input-field" type="text" placeholder="Nome partner / progetto" required />
-          <input name="website" class="input-field" type="url" placeholder="Sito web (facoltativo)" />
           <input name="contactEmail" class="input-field" type="email" placeholder="Email di contatto" required />
           <textarea name="description" class="textarea-field" placeholder="Descrivi la tua partner" required></textarea>
           <button type="submit" class="button">Invia richiesta</button>
@@ -54,10 +56,6 @@
       </div>
     </div>
     <script src="js/admin-pages.js"></script>
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        initPartnerRequestPage();
-      });
-    </script>
+    <script src="js/requestpartner.js"></script>
   </body>
 </html>

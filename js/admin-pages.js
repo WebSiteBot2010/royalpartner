@@ -124,9 +124,10 @@ async function submitPartnerForm(formId, listId) {
   if (!form) return;
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    const websiteField = form.elements.website;
     const data = {
       name: form.elements.name.value.trim(),
-      website: form.elements.website.value.trim(),
+      website: websiteField ? websiteField.value.trim() : '',
       contactEmail: form.elements.contactEmail.value.trim(),
       description: form.elements.description.value.trim()
     };
