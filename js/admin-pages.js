@@ -354,7 +354,7 @@ async function initAdminRolePage(role, email, password) {
   if (['gestore', 'partner'].includes(role)) {
     await refreshPartnerLogs('partner-logs-list');
   }
-  if (role === 'gestore' || role === 'admin') {
+  if (role === 'gestore' || role === 'admin' || role === 'partner') {
     setupAcceptButtons();
   }
 }

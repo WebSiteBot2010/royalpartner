@@ -141,16 +141,13 @@
         </div>
         <p class="section-description">
           Invia la richiesta partner direttamente dal sito. Una volta accettata, il team di supporto
-          potrà confermare con un click dal pannello admin.
+          potrà confermare con un click dal pannello admin e riceverai una notifica su Discord.
         </p>
         <div class="panel-card">
-          <form id="partner-form" class="form-grid">
-            <input name="name" class="input-field" type="text" placeholder="Nome partner / progetto" required />
-            <input name="website" class="input-field" type="url" placeholder="Sito web (facoltativo)" />
-            <input name="contactEmail" class="input-field" type="email" placeholder="Email di contatto" required />
-            <textarea name="description" class="textarea-field" placeholder="Descrivi la tua partner" required></textarea>
-            <button type="submit" class="button">Invia richiesta</button>
-          </form>
+          <button class="button" data-open-modal="partner-modal">Invia Richiesta Partner</button>
+          <p class="section-description" style="margin-top: 1rem;">
+            Le richieste vengono inviate al nostro server e gestite dal team partner. Non includere il sito web nel dashboard.
+          </p>
         </div>
       </section>
 
@@ -162,13 +159,10 @@
           Vuoi collaborare con Royal Partner? Compila la candidatura e il team potrà controllare entro breve.
         </p>
         <div class="panel-card">
-          <form id="collaboratore-form" class="form-grid">
-            <input name="name" class="input-field" type="text" placeholder="Nome" required />
-            <input name="role" class="input-field" type="text" placeholder="Ruolo desiderato" required />
-            <input name="contactEmail" class="input-field" type="email" placeholder="Email di contatto" required />
-            <textarea name="description" class="textarea-field" placeholder="Perché vuoi collaborare?" required></textarea>
-            <button type="submit" class="button">Invia candidatura</button>
-          </form>
+          <button class="button" data-open-modal="collaboratore-modal">Invia Candidatura Collaboratore</button>
+          <p class="section-description" style="margin-top: 1rem;">
+            Le candidature vengono inviate al nostro server e gestite dal team admin.
+          </p>
         </div>
       </section>
 
@@ -244,13 +238,13 @@
       <div class="modal">
         <button class="close-button modal-close" aria-label="Chiudi">×</button>
         <h3>Richiesta Partner</h3>
-        <p>Invia la tua richiesta partner dal sito ufficiale.</p>
-        <form class="form-grid">
-          <input class="input-field" type="text" placeholder="Nome partner / progetto" />
-          <input class="input-field" type="url" placeholder="Sito web (facoltativo)" />
-          <input class="input-field" type="email" placeholder="Email di contatto" />
-          <textarea class="textarea-field" placeholder="Descrivi la tua partner"></textarea>
-          <button type="button" class="button modal-close">Chiudi</button>
+        <p>Invia la tua richiesta partner dal sito ufficiale. Verrà gestita dal team partner.</p>
+        <form id="partner-form" class="form-grid">
+          <input name="name" class="input-field" type="text" placeholder="Nome partner / progetto" required />
+          <input name="contactEmail" class="input-field" type="email" placeholder="Email di contatto" required />
+          <textarea name="description" class="textarea-field" placeholder="Descrivi la tua partner" required></textarea>
+          <button type="submit" class="button">Invia richiesta</button>
+          <button type="button" class="secondary-button modal-close">Chiudi</button>
         </form>
       </div>
     </div>
@@ -259,13 +253,14 @@
       <div class="modal">
         <button class="close-button modal-close" aria-label="Chiudi">×</button>
         <h3>Candidatura Collaboratore</h3>
-        <p>Invia la richiesta come collaboratore.</p>
-        <form class="form-grid">
-          <input class="input-field" type="text" placeholder="Nome" />
-          <input class="input-field" type="text" placeholder="Ruolo desiderato" />
-          <input class="input-field" type="email" placeholder="Email di contatto" />
-          <textarea class="textarea-field" placeholder="Perchè vuoi collaborare?"></textarea>
-          <button type="button" class="button modal-close">Chiudi</button>
+        <p>Invia la richiesta come collaboratore. Verrà gestita dal team admin.</p>
+        <form id="collaboratore-form" class="form-grid">
+          <input name="name" class="input-field" type="text" placeholder="Nome" required />
+          <input name="role" class="input-field" type="text" placeholder="Ruolo desiderato" required />
+          <input name="contactEmail" class="input-field" type="email" placeholder="Email di contatto" required />
+          <textarea name="description" class="textarea-field" placeholder="Perché vuoi collaborare?" required></textarea>
+          <button type="submit" class="button">Invia candidatura</button>
+          <button type="button" class="secondary-button modal-close">Chiudi</button>
         </form>
       </div>
     </div>
