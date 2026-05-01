@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Collaboratore - Royal Partner</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="brand"><span>Royal</span>Partner</div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="requestpartner.html">Richiesta Partner</a>
+          <a href="requestcollab.html">Richiesta Collaboratore</a>
+          <a href="annunci.html">Annunci</a>
+          <a href="comunicazioni.html">Comunicazioni</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section">
+        <div class="section-title"><h2>Request Collaboratore</h2></div>
+        <p class="section-description">
+          Invia una candidatura collaboratore. I dati vengono salvati sul backend e visualizzati con i record reali.
+        </p>
+      </section>
+      <section class="section">
+        <div class="panel-card">
+          <form id="collaborator-request-form" class="form-grid">
+            <input name="name" class="input-field" type="text" placeholder="Nome" required />
+            <input name="role" class="input-field" type="text" placeholder="Ruolo desiderato" required />
+            <input name="contactEmail" class="input-field" type="email" placeholder="Email di contatto" required />
+            <textarea name="description" class="textarea-field" placeholder="Perché vuoi collaborare?" required></textarea>
+            <button type="submit" class="button">Invia candidatura</button>
+          </form>
+        </div>
+      </section>
+      <section class="section">
+        <div class="section-title"><h2>Candidature Collaboratori inviate</h2></div>
+        <div id="collaborator-requests-list"></div>
+      </section>
+    </main>
+    <script src="js/admin-pages.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        initCollaboratorRequestPage();
+      });
+    </script>
+  </body>
+</html>

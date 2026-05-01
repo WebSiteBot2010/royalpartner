@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel Moderazione - Royal Partner</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="brand"><span>Royal</span>Partner</div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="requestpartner.html">Request Partner</a>
+          <a href="requestcollab.html">Request Collaboratore</a>
+          <a href="annunci.html">Annunci</a>
+          <a href="comunicazioni.html">Comunicazioni</a>
+          <a href="adminpanelmoderazione.html">Moderazione</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section">
+        <div class="section-title"><h2>Admin Panel Moderazione</h2></div>
+        <p class="section-description">
+          Questa pagina è dedicata all'email <strong>moderazione@support</strong>.
+          Qui puoi pubblicare annunci e comunicazioni ufficiali con dati reali del backend.
+        </p>
+      </section>
+      <section class="section">
+        <div class="section-title"><h2>Gestione Annunci</h2></div>
+        <div class="panel-card">
+          <form id="announcement-form" class="form-grid">
+            <input name="title" class="input-field" placeholder="Titolo annuncio" required />
+            <textarea name="content" class="textarea-field" placeholder="Contenuto annuncio" required></textarea>
+            <button type="submit" class="button">Pubblica annuncio</button>
+          </form>
+        </div>
+        <div id="announcements-preview"></div>
+      </section>
+      <section class="section">
+        <div class="section-title"><h2>Gestione Comunicazioni</h2></div>
+        <div class="panel-card">
+          <form id="communication-form" class="form-grid">
+            <input name="title" class="input-field" placeholder="Titolo comunicazione" required />
+            <textarea name="content" class="textarea-field" placeholder="Contenuto comunicazione" required></textarea>
+            <button type="submit" class="button">Pubblica comunicazione</button>
+          </form>
+        </div>
+        <div id="communications-preview"></div>
+      </section>
+      <section class="section">
+        <div class="section-title"><h2>Status</h2></div>
+        <div class="panel-card"><p>Le modifiche qui pubblicate vengono salvate sul backend e rese visibili in tempo reale a tutti i visitatori.</p></div>
+      </section>
+    </main>
+    <script src="js/admin-pages.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        initAdminRolePage('moderazione', 'moderazione@support', 'moderazione123');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel Admin - Royal Partner</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="brand"><span>Royal</span>Partner</div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="requestpartner.html">Request Partner</a>
+          <a href="requestcollab.html">Request Collaboratore</a>
+          <a href="annunci.html">Annunci</a>
+          <a href="comunicazioni.html">Comunicazioni</a>
+          <a href="adminpaneladmin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section">
+        <div class="section-title"><h2>Admin Panel Admin</h2></div>
+        <p class="section-description">
+          Questa pagina è dedicata all'email <strong>admin@support</strong>.
+          Puoi gestire direttamente le richieste partner e le candidature collaboratore con dati reali dal backend.
+        </p>
+      </section>
+      <section class="section">
+        <div id="admin-overview"></div>
+      </section>
+      <section class="section">
+        <div class="section-title"><h2>Richieste Partner</h2></div>
+        <div id="partner-requests-list"></div>
+      </section>
+      <section class="section">
+        <div class="section-title"><h2>Candidature Collaboratore</h2></div>
+        <div id="collaborator-requests-list"></div>
+      </section>
+      <section class="section">
+        <div class="section-title"><h2>Log Partner</h2></div>
+        <div id="partner-logs-list"></div>
+      </section>
+      <section class="section">
+        <div class="panel-card">
+          <p>Nota: l'email <strong>admin@support</strong> non gestisce annunci e comunicazioni in questa versione.</p>
+        </div>
+      </section>
+    </main>
+    <script src="js/admin-pages.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        initAdminRolePage('admin', 'admin@support', 'admin123');
+      });
+    </script>
+  </body>
+</html>

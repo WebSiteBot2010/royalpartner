@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annunci - Royal Partner</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-inner">
+        <div class="brand"><span>Royal</span>Partner</div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="requestpartner.html">Request Partner</a>
+          <a href="requestcollab.html">Request Collaboratore</a>
+          <a href="annunci.html">Annunci</a>
+          <a href="comunicazioni.html">Comunicazioni</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="section">
+        <div class="section-title"><h2>Annunci Reali</h2></div>
+        <p class="section-description">
+          Qui trovi gli annunci reali pubblicati dal backend. Ogni nuova pubblicazione viene mostrata automaticamente.
+        </p>
+      </section>
+      <section class="section">
+        <div id="announcements-list"></div>
+      </section>
+    </main>
+    <script src="js/admin-pages.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        initAnnouncementsPage();
+      });
+    </script>
+  </body>
+</html>

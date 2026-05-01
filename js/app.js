@@ -213,7 +213,7 @@ async function loginAdmin(event) {
     renderAdminPage();
     showToast(`Accesso come ${auth.role}.`);
   } catch (error) {
-    showToast('Login fallito: ' + error.message);
+    showToast('Login fallito: ' + error.message + '. Controlla che il server sia avviato e che l’API sia disponibile.');
   }
 }
 
