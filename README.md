@@ -9,7 +9,12 @@ Questo progetto contiene il sito ufficiale di Royal Partner con:
 - Diventa Collaboratore
 - Annunci in tempo reale
 - Comunicazioni ufficiali in tempo reale
-- Admin Panel con accesso role-based per 4 ruoli diversi
+- Admin Panel con 4 ruoli separati e pagine dedicate:
+  - `adminpanelgestore.html` - Gestore (accesso completo)
+  - `adminpaneladmin.html` - Admin (partner e collaboratori)
+  - `adminpanelmoderazione.html` - Moderazione (annunci e comunicazioni)
+  - `adminpanelpartner.html` - Partner (partner e log)
+- Pagine pubbliche: `requestpartner.html`, `requestcollab.html`, `annunci.html`, `comunicazioni.html`
 
 ## File principali
 
@@ -51,10 +56,14 @@ http://localhost:3000
 
 ## Credenziali admin di prova
 
-- `gestore@support` / `gestore123`
-- `admin@support` / `admin123`
-- `moderazione@support` / `moderazione123`
-- `partner@support` / `partner123`
+Ogni ruolo ha accesso solo alle proprie pagine admin dedicate:
+
+- **gestore@support** / `gestore123` → `adminpanelgestore.html` (tutto: partner, collaboratori, annunci, comunicazioni, log)
+- **admin@support** / `admin123` → `adminpaneladmin.html` (partner e collaboratori)
+- **moderazione@support** / `moderazione123` → `adminpanelmoderazione.html` (annunci e comunicazioni)
+- **partner@support** / `partner123` → `adminpanelpartner.html` (partner e log)
+
+Ogni pagina admin verifica automaticamente il ruolo corretto e mostra "Accesso negato" se si usa un'email sbagliata.
 
 ## Deploy su Vercel
 

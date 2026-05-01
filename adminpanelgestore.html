@@ -29,49 +29,59 @@
           Qui puoi vedere e gestire i dati reali salvati sul backend: richieste partner, candidature collaboratore, annunci,
           comunicazioni e log partner.
         </p>
-      </section>
-      <section class="section">
-        <div id="admin-overview"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Richieste Partner</h2></div>
-        <div id="partner-requests-list"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Candidature Collaboratore</h2></div>
-        <div id="collaborator-requests-list"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Gestione Annunci</h2></div>
-        <div class="panel-card">
-          <form id="announcement-form" class="form-grid">
-            <input name="title" class="input-field" placeholder="Titolo annuncio" required />
-            <textarea name="content" class="textarea-field" placeholder="Contenuto annuncio" required></textarea>
-            <button type="submit" class="button">Pubblica annuncio</button>
-          </form>
+        <div id="access-denied" class="panel-card hidden">
+          <h3>Accesso negato</h3>
+          <p>Questa pagina è riservata al ruolo Gestore. Usa le credenziali appropriate.</p>
         </div>
-        <div id="announcements-preview"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Gestione Comunicazioni</h2></div>
-        <div class="panel-card">
-          <form id="communication-form" class="form-grid">
-            <input name="title" class="input-field" placeholder="Titolo comunicazione" required />
-            <textarea name="content" class="textarea-field" placeholder="Contenuto comunicazione" required></textarea>
-            <button type="submit" class="button">Pubblica comunicazione</button>
-          </form>
+        <div id="admin-content" class="hidden">
+          <div id="admin-overview"></div>
+          <section class="section">
+            <div class="section-title"><h2>Richieste Partner</h2></div>
+            <div id="partner-requests-list"></div>
+          </section>
+          <section class="section">
+            <div class="section-title"><h2>Candidature Collaboratore</h2></div>
+            <div id="collaborator-requests-list"></div>
+          </section>
+          <section class="section">
+            <div class="section-title"><h2>Gestione Annunci</h2></div>
+            <div class="panel-card">
+              <form id="announcement-form" class="form-grid">
+                <input name="title" class="input-field" placeholder="Titolo annuncio" required />
+                <textarea name="content" class="textarea-field" placeholder="Contenuto annuncio" required></textarea>
+                <button type="submit" class="button">Pubblica annuncio</button>
+              </form>
+            </div>
+            <div id="announcements-preview"></div>
+          </section>
+          <section class="section">
+            <div class="section-title"><h2>Gestione Comunicazioni</h2></div>
+            <div class="panel-card">
+              <form id="communication-form" class="form-grid">
+                <input name="title" class="input-field" placeholder="Titolo comunicazione" required />
+                <textarea name="content" class="textarea-field" placeholder="Contenuto comunicazione" required></textarea>
+                <button type="submit" class="button">Pubblica comunicazione</button>
+              </form>
+            </div>
+            <div id="communications-preview"></div>
+          </section>
+          <section class="section">
+            <div class="section-title"><h2>Log Partner</h2></div>
+            <div id="partner-logs-list"></div>
+          </section>
         </div>
-        <div id="communications-preview"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Log Partner</h2></div>
-        <div id="partner-logs-list"></div>
       </section>
     </main>
     <script src="js/admin-pages.js"></script>
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        initAdminRolePage('gestore', 'gestore@support', 'gestore123');
+      window.addEventListener('DOMContentLoaded', async () => {
+        const logged = await loginAndLoad('gestore@support', 'gestore123', 'gestore');
+        if (!logged) {
+          document.getElementById('access-denied').classList.remove('hidden');
+          return;
+        }
+        document.getElementById('admin-content').classList.remove('hidden');
+        await initAdminRolePage('gestore', 'gestore@support', 'gestore123');
       });
     </script>
   </body>

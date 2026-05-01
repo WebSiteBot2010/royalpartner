@@ -267,13 +267,17 @@ async function acceptApplication(id, type) {
   });
 }
 
-async function loginAndLoad(email, password) {
+async function loginAndLoad(email, password, expectedRole) {
   try {
-    await fetchJson(`${API_BASE}/login`, {
+    const auth = await fetchJson(`${API_BASE}/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })
     });
+    if (expectedRole && auth.role !== expectedRole) {
+      showToast(`Accesso negato: questa pagina richiede il ruolo ${expectedRole}.`);
+      return false;
+    }
     return true;
   } catch (error) {
     showToast(`Impossibile effettuare il login: ${error.message}`);

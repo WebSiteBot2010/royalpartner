@@ -28,32 +28,38 @@
           Questa pagina è dedicata all'email <strong>admin@support</strong>.
           Puoi gestire direttamente le richieste partner e le candidature collaboratore con dati reali dal backend.
         </p>
-      </section>
-      <section class="section">
-        <div id="admin-overview"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Richieste Partner</h2></div>
-        <div id="partner-requests-list"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Candidature Collaboratore</h2></div>
-        <div id="collaborator-requests-list"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Log Partner</h2></div>
-        <div id="partner-logs-list"></div>
-      </section>
-      <section class="section">
-        <div class="panel-card">
-          <p>Nota: l'email <strong>admin@support</strong> non gestisce annunci e comunicazioni in questa versione.</p>
+        <div id="access-denied" class="panel-card hidden">
+          <h3>Accesso negato</h3>
+          <p>Questa pagina è riservata al ruolo Admin. Usa le credenziali appropriate.</p>
+        </div>
+        <div id="admin-content" class="hidden">
+          <div id="admin-overview"></div>
+          <section class="section">
+            <div class="section-title"><h2>Richieste Partner</h2></div>
+            <div id="partner-requests-list"></div>
+          </section>
+          <section class="section">
+            <div class="section-title"><h2>Candidature Collaboratore</h2></div>
+            <div id="collaborator-requests-list"></div>
+          </section>
+          <section class="section">
+            <div class="panel-card">
+              <p>Nota: l'email <strong>admin@support</strong> non gestisce annunci e comunicazioni in questa versione.</p>
+            </div>
+          </section>
         </div>
       </section>
     </main>
     <script src="js/admin-pages.js"></script>
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        initAdminRolePage('admin', 'admin@support', 'admin123');
+      window.addEventListener('DOMContentLoaded', async () => {
+        const logged = await loginAndLoad('admin@support', 'admin123', 'admin');
+        if (!logged) {
+          document.getElementById('access-denied').classList.remove('hidden');
+          return;
+        }
+        document.getElementById('admin-content').classList.remove('hidden');
+        await initAdminRolePage('admin', 'admin@support', 'admin123');
       });
     </script>
   </body>

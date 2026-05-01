@@ -28,23 +28,35 @@
           Questa pagina è dedicata all'email <strong>partner@support</strong>.
           Mostra le richieste partner reali e i log delle accettazioni.
         </p>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Richieste Partner</h2></div>
-        <div id="partner-requests-list"></div>
-      </section>
-      <section class="section">
-        <div class="section-title"><h2>Log Partner</h2></div>
-        <div id="partner-logs-list"></div>
-      </section>
-      <section class="section">
-        <div class="panel-card"><p>Il ruolo Partner può vedere i dati reali delle richieste e i log delle accettazioni.</p></div>
+        <div id="access-denied" class="panel-card hidden">
+          <h3>Accesso negato</h3>
+          <p>Questa pagina è riservata al ruolo Partner. Usa le credenziali appropriate.</p>
+        </div>
+        <div id="admin-content" class="hidden">
+          <section class="section">
+            <div class="section-title"><h2>Richieste Partner</h2></div>
+            <div id="partner-requests-list"></div>
+          </section>
+          <section class="section">
+            <div class="section-title"><h2>Log Partner</h2></div>
+            <div id="partner-logs-list"></div>
+          </section>
+          <section class="section">
+            <div class="panel-card"><p>Il ruolo Partner può vedere i dati reali delle richieste e i log delle accettazioni.</p></div>
+          </section>
+        </div>
       </section>
     </main>
     <script src="js/admin-pages.js"></script>
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        initAdminRolePage('partner', 'partner@support', 'partner123');
+      window.addEventListener('DOMContentLoaded', async () => {
+        const logged = await loginAndLoad('partner@support', 'partner123', 'partner');
+        if (!logged) {
+          document.getElementById('access-denied').classList.remove('hidden');
+          return;
+        }
+        document.getElementById('admin-content').classList.remove('hidden');
+        await initAdminRolePage('partner', 'partner@support', 'partner123');
       });
     </script>
   </body>
