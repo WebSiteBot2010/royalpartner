@@ -29,7 +29,7 @@ Questo progetto contiene il sito ufficiale di Royal Partner con:
 cp .env.example .env
 ```
 
-2. Modifica `.env` con i dati di accesso MySQL e, se desideri, il webhook Discord.
+2. Modifica `.env` solo se vuoi usare un webhook Discord diverso.
 
 3. Installa le dipendenze:
 
