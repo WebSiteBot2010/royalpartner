@@ -56,6 +56,21 @@ http://localhost:3000
 - `moderazione@support` / `moderazione123`
 - `partner@support` / `partner123`
 
+## Deploy su Vercel
+
+Il sito è configurato per il deploy automatico su Vercel:
+
+1. Connetti il repository GitHub a Vercel
+2. Aggiungi la variabile d'ambiente `DISCORD_WEBHOOK_URL` nel dashboard Vercel
+3. Il deploy avviene automaticamente ad ogni push
+
+Il sito sarà disponibile su `https://royalpartner.vercel.app`
+
+### File di configurazione Vercel
+
+- `vercel.json` — configurazione routing per API serverless
+- `api/[...path].js` — backend serverless per Vercel
+
 ## Note
 
 - Il backend locale usa `server.js` e `data.json` per sviluppo.
