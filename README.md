@@ -16,10 +16,10 @@ Questo progetto contiene il sito ufficiale di Royal Partner con:
 - `index.html` — interfaccia principale del sito
 - `css/style.css` — stili personalizzati
 - `js/app.js` — logica client-side per routing, modali e admin
-- `server.js` — backend Express + MySQL
+- `server.js` — backend Express locale
+- `api/[...path].js` — backend serverless per Vercel
 - `package.json` — dipendenze e script
-- `schema.sql` — schema di esempio del database MySQL
-- `.env.example` — esempio di configurazione MySQL e webhook Discord
+- `.env.example` — esempio di configurazione webhook Discord
 
 ## Installazione e avvio
 
@@ -58,6 +58,8 @@ http://localhost:3000
 
 ## Note
 
-- Il server inizializza automaticamente il database MySQL e crea le tabelle richieste.
-- Se imposti `DISCORD_WEBHOOK_URL`, il server invierà le notifiche delle nuove richieste partner.
+- Il backend locale usa `server.js` e `data.json` per sviluppo.
+- Su Vercel il progetto usa `api/[...path].js` come serverless API, con lo stesso comportamento dei percorsi `/api/*`.
+- Se imposti `DISCORD_WEBHOOK_URL`, il backend invierà le notifiche delle nuove richieste partner su Discord.
 - La visualizzazione delle pagine è gestita tramite hash routing in `js/app.js`.
+- Su Vercel la preview viene aggiornata automaticamente ad ogni deploy/preview branch.
