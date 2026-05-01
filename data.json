@@ -1,19 +1,76 @@
 {
   "admins": [
-    { "email": "gestore@support", "password": "gestore123", "role": "gestore", "display_name": "Gestore Support" },
-    { "email": "admin@support", "password": "admin123", "role": "admin", "display_name": "Admin Support" },
-    { "email": "moderazione@support", "password": "moderazione123", "role": "moderazione", "display_name": "Moderazione Support" },
-    { "email": "partner@support", "password": "partner123", "role": "partner", "display_name": "Partner Support" }
+    {
+      "email": "gestore@support",
+      "password": "gestore123",
+      "role": "gestore",
+      "display_name": "Gestore Support"
+    },
+    {
+      "email": "admin@support",
+      "password": "admin123",
+      "role": "admin",
+      "display_name": "Admin Support"
+    },
+    {
+      "email": "moderazione@support",
+      "password": "moderazione123",
+      "role": "moderazione",
+      "display_name": "Moderazione Support"
+    },
+    {
+      "email": "partner@support",
+      "password": "partner123",
+      "role": "partner",
+      "display_name": "Partner Support"
+    }
   ],
-  "partner_applications": [],
+  "partner_applications": [
+    {
+      "id": 1,
+      "name": "TestPartner",
+      "website": "https://test.com",
+      "contact_email": "test@test.com",
+      "description": "Test rendering",
+      "status": "accepted",
+      "submitted_at": "2026-05-01T08:32:39.309Z"
+    }
+  ],
   "collaborator_applications": [],
   "announcements": [
-    { "id": 1, "title": "Benvenuti su Royal Partner", "content": "Il sito ufficiale è online con tutte le pagine dedicate a staff, partner e collaboratori.", "created_at": "2026-05-01T00:00:00.000Z" },
-    { "id": 2, "title": "Novità: Admin Panel attivo", "content": "Il sistema ora supporta login role-based e gestione annunci / comunicazioni in tempo reale.", "created_at": "2026-05-01T00:00:00.000Z" }
+    {
+      "id": 1,
+      "title": "Benvenuti su Royal Partner",
+      "content": "Il sito ufficiale è online con tutte le pagine dedicate a staff, partner e collaboratori.",
+      "created_at": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Novità: Admin Panel attivo",
+      "content": "Il sistema ora supporta login role-based e gestione annunci / comunicazioni in tempo reale.",
+      "created_at": "2026-05-01T00:00:00.000Z"
+    }
   ],
   "communications": [
-    { "id": 1, "title": "Comunicazione ufficiale", "content": "Royal Partner continua a crescere. Usa il pannello admin per gestire richieste e contenuti.", "created_at": "2026-05-01T00:00:00.000Z" },
-    { "id": 2, "title": "Aggiornamento sicurezza", "content": "Ricorda di usare credenziali al sicuro e di mantenere il progetto in una cartella protetta.", "created_at": "2026-05-01T00:00:00.000Z" }
+    {
+      "id": 1,
+      "title": "Comunicazione ufficiale",
+      "content": "Royal Partner continua a crescere. Usa il pannello admin per gestire richieste e contenuti.",
+      "created_at": "2026-05-01T00:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Aggiornamento sicurezza",
+      "content": "Ricorda di usare credenziali al sicuro e di mantenere il progetto in una cartella protetta.",
+      "created_at": "2026-05-01T00:00:00.000Z"
+    }
   ],
-  "partner_logs": []
+  "partner_logs": [
+    {
+      "id": 1,
+      "partner_id": 1,
+      "message": "Partner accettato: TestPartner",
+      "created_at": "2026-05-01T08:32:39.432Z"
+    }
+  ]
 }
